@@ -1,0 +1,35 @@
+name: Index GitHub Pages
+
+on:
+  repository_dispatch: # Erlaubt das Triggern von außen
+  workflow_dispatch:   # Erlaubt das manuelle Starten im Browser
+  schedule:
+    - cron: '0 0 * * *' # Läuft automatisch jeden Tag um Mitternacht
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Fetch Repositories and Filter Pages
+      run: |
+        # Holt alle öffentlichen Repositories des Users via GitHub API
+        curl -s "https://api.github.com/users/${{ github.repository_owner }}/repos?per_page=100" > all_repos.json
+        
+        # Filtert mit 'jq' nach Repos, die Pages aktiviert haben, und baut das JSON-Format
+        jq '[.[] | select(.has_pages == true and .name != "${{ github.repository_owner }}.github.io") | {name: .name, description: .description, url: ("https://" + .owner.login + ".github.io/" + .name)}]' all_repos.json > index.json
+        
+        # Temporäre Datei löschen
+        rm all_repos.json
+
+    - name: Commit and Push index.json
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add index.json
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Automated update of index.json" && git push)
