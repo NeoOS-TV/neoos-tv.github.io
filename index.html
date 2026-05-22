@@ -117,8 +117,11 @@
         async function loadProjects() {
             const grid = document.getElementById('project-grid');
             try {
-                // Holt die von der GitHub Action generierte JSON-Datei
-                const response = await fetch('./index.json');
+                // Einzigartiger Zeitstempel, um den Browser-Cache für den Index zu umgehen
+                const timestamp = new Date().getTime();
+                
+                // Holt die von der GitHub Action generierte JSON-Datei mit Cache-Killer
+                const response = await fetch(`./index.json?t=${timestamp}`);
                 if (!response.ok) throw new Error('JSON konnte nicht geladen werden');
                 
                 const projects = await response.json();
