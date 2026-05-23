@@ -1,5 +1,10 @@
 [
   {
+    "name": "build_webos_app",
+    "description": null,
+    "url": "https://NeoOS-TV.github.io/build_webos_app"
+  },
+  {
     "name": "com.neoos.app.tv-client-nosat",
     "description": null,
     "url": "https://NeoOS-TV.github.io/com.neoos.app.tv-client-nosat"
@@ -8,11 +13,6 @@
     "name": "GitEditor_",
     "description": null,
     "url": "https://NeoOS-TV.github.io/GitEditor_"
-  },
-  {
-    "name": "neoos-apps",
-    "description": null,
-    "url": "https://NeoOS-TV.github.io/neoos-apps"
   },
   {
     "name": "neoos-developer",
