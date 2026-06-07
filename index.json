@@ -10,6 +10,11 @@
     "url": "https://NeoOS-TV.github.io/com.neoos.app.tv-client-nosat"
   },
   {
+    "name": "DVB-C-plus",
+    "description": null,
+    "url": "https://NeoOS-TV.github.io/DVB-C-plus"
+  },
+  {
     "name": "GitEditor_",
     "description": null,
     "url": "https://NeoOS-TV.github.io/GitEditor_"
