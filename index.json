@@ -1,5 +1,10 @@
 [
   {
+    "name": "4d-visualizer",
+    "description": null,
+    "url": "https://NeoOS-TV.github.io/4d-visualizer"
+  },
+  {
     "name": "build_webos_app",
     "description": null,
     "url": "https://NeoOS-TV.github.io/build_webos_app"
