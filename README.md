@@ -1,0 +1,1 @@
+[![Index GitHub Pages Repos](https://github.com/NeoOS-TV/neoos-tv.github.io/actions/workflows/index-pages.yml/badge.svg)](https://github.com/NeoOS-TV/neoos-tv.github.io/actions/workflows/index-pages.yml)
