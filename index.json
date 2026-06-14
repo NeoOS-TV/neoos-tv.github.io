@@ -30,6 +30,11 @@
     "url": "https://NeoOS-TV.github.io/neoos-developer"
   },
   {
+    "name": "neotv",
+    "description": null,
+    "url": "https://NeoOS-TV.github.io/neotv"
+  },
+  {
     "name": "neotv-mobile",
     "description": null,
     "url": "https://NeoOS-TV.github.io/neotv-mobile"
